@@ -14,8 +14,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void launchIntent (View view) {
-        Intent intent = new Intent (Intent.ACTION_VIEW);
+    public void launchIntent(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse("https://www.packtpub.com/"));
         startActivity(intent);
     }
