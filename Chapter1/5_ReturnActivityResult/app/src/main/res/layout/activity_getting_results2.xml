@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondActivity">
+    tools:context=".GettingResults2">
 
     <TextView
         android:id="@+id/textViewText"
         android:text="@string/app_name"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+        android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/buttonClose"
@@ -20,7 +19,6 @@
         android:text="Close"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:onClick="onClickClose"
-        tools:ignore="MissingConstraints" />
+        android:onClick="onClickClose"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -1,10 +1,11 @@
-package com.example.activityswitcher;
+package com.example.gettingresults;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,11 +15,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode==RESULT_OK) {
+            Toast.makeText(this, Integer.toString(data.getIntExtra(Request_Result,0)),
+                    Toast.LENGTH_LONG).show();
+        }
+    }
+
     public void onClickSwitchActivity(View view) {
         EditText editText = (EditText)findViewById(R.id.editTextData);
         String text = editText.getText().toString();
-        Intent intent = new Intent(this, SecondActivity.class);
+        Intent intent = new Intent(this, GettingResults2.class);
         intent.putExtra(Intent.EXTRA_TEXT,text);
-        startActivity(intent);
+        startActivityForResult(intent,1);
     }
+
+    public static final String Request_Result = "Request_Result";
 }
